@@ -1,0 +1,40 @@
+* {
+    background-color: white;
+}
+
+main {
+    text-align: center;
+}
+
+main h1 {
+    font-family: "Agbalumo";
+    color: rgb(22, 66, 22);
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: gray;
+}
+
+.contenedor article {
+    padding: 2em;
+}
+
+.contenedor article:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.contenedor article:hover p {
+    background-color: rgb(240, 240, 240);
+}
+
+.contenedor button {
+    color: white;
+    background: linear-gradient(rgb(4, 59, 4), rgb(4, 41, 4));
+    width: 10em;
+    height: 3em;
+    border-radius: 7%;
+}

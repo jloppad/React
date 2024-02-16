@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1b1b32;
+  color: white;
+  text-align: center;
+  font-size: x-large;
+  margin-top: 2%;
+}
+
+.comentario {
+  display: flex;
+  background-color: #0a0a23;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+}
+
+.contenido_comentario {
+  padding: 5%;
+}
+
+.contenido_comentario p:nth-child(2) {
+  margin-top: 2%;
+}
+
+.contenido_comentario p:last-child {
+  text-align: justify;
+  font-size: large;
+  margin-top: 5%;
+}
