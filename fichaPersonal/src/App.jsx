@@ -7,7 +7,15 @@ function App() {
   const [persona, setPersona] = useState([]);
   const [id, setID] = useState(1);
   const url = `https://jsonplaceholder.typicode.com/users/${id}`;
+
   const cambiar = (e) => setID(e.target.value);
+  
+  const siguiente = () => {
+    let nid = parseInt(document.getElementById("cod-id").value);
+    setID(nid+1);
+    leer();
+  };
+
   const leer = () => fetch(url)
   .then (datos => datos.json())
   .then (lectura => {
@@ -20,25 +28,33 @@ function App() {
       lectura.phone
       ]);
   });
+
   useEffect(() => {leer()}, []);
 
   return (
     <>
       <section className="form_wrap">
-      <Info
-        email="info.contact@gmail.com"
-        telefono="+034 666 999 666"
-      ></Info>
+
+        <Info
+          email="info.contact@gmail.com"
+          telefono="+034 666 999 666"
+        ></Info>
 
       <form action="" className="form_contact">
         <div className="user_info">
-          <label htmlFor="cod-id">Id</label>
-          <input type="text" id="cod_id" value={id} onChange={cambiar}/>
+
+          <Valor
+              campo="Id"
+              id="cod-id"
+              valor={id}
+              onChange={cambiar}
+            ></Valor>
 
           <Valor
             campo="Nombre"
             id="name"
             valor={persona[1]}
+            readOnly="readOnly"          
           ></Valor>
 
           <Valor
@@ -66,7 +82,7 @@ function App() {
           ></Valor>
 
           <div>
-            <input type="button" value="Leer Siguiente" id="btnSgte" />
+            <input type="button" value="Leer Siguiente" id="btnSgte" onClick={siguiente}/>
             <input type="button" value="Leer Datos" id="btnSend" onClick={leer}/>
           </div>
         </div>
