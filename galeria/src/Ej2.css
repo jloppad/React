@@ -1,0 +1,39 @@
+body {
+    background-color: green;
+}
+
+.contenedor {
+    display: grid;
+    gap: 15px;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: white;
+    margin: 1em;
+    padding-top: 3em;
+}
+
+.contenedor div {
+    justify-self: center;
+    padding: 1em;
+    border-radius: 5%;
+}
+
+img {
+    border: 1px solid rgb(12, 33, 151);
+    text-align: center;
+    padding: 0.7em;
+}
+
+p {
+    border: 1px solid rgb(160, 20, 20);
+    text-align: center;
+    padding: 0.5em;
+}
+
+.agua {
+    background-color: rgb(202, 214, 255);
+}
+
+.fuego {
+    background-color: rgb(255, 202, 202);
+}
