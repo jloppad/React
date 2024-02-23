@@ -13,37 +13,37 @@ function App() {
     <>
       <div class="contenedor">
           <Imagen
-            agua="true"
+            agua={true}
             src={img1}
             alt="foto1"
             desc="Foto 1"
           ></Imagen>
           <Imagen
-            agua="false"
+            agua={false}
             src={img2}
             alt="foto2"
             desc="Foto 2"
           ></Imagen>
           <Imagen
-            agua="true"
+            agua={true}
             src={img3}
             alt="foto3"
             desc="Foto 3"
           ></Imagen>
           <Imagen
-            agua="false"
+            agua={false}
             src={img4}
             alt="foto4"
             desc="Foto 4"
           ></Imagen>
           <Imagen
-            agua="true"
+            agua={true}
             src={img5}
             alt="foto5"
             desc="Foto 5"
           ></Imagen>
           <Imagen
-            agua="false"
+            agua={false}
             src={img6}
             alt="foto6"
             desc="Foto 6"
