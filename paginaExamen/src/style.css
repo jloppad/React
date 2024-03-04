@@ -1,0 +1,144 @@
+body {
+  background: rgb(241, 241, 241);
+}
+
+header {
+  background-image: url("./recursos/foto5.jpg");
+  background-attachment: fixed;
+  height: 100vh;
+  padding: 2em;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+}
+header #nav, header #check {
+  display: none;
+}
+header #check:not(:checked) ~ nav {
+  display: none;
+}
+header #check:checked ~ nav {
+  display: block;
+  transition: all 1s 1ms;
+}
+header #nav {
+  display: block;
+}
+header #cerrar {
+  display: none;
+}
+header #check:checked ~ label#abrir {
+  display: none;
+}
+header #check:checked ~ label#cerrar {
+  display: block;
+}
+header #nav {
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.377);
+}
+header #nav ul {
+  list-style: none;
+  padding: 0em;
+}
+header #nav ul li {
+  display: block;
+  padding: 1em;
+}
+header #nav ul li:hover {
+  background-color: rgb(97, 97, 97);
+}
+
+main {
+  padding: 2em 0;
+}
+main article:first-child {
+  display: flex;
+  justify-content: space-around;
+}
+main article:first-child .sierras {
+  width: 40%;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+}
+main article:first-child .sierras img {
+  width: 100%;
+}
+main article:first-child .sierras .parajes {
+  color: rgb(117, 117, 117);
+  border-bottom: 1px solid rgb(117, 117, 117);
+  width: 30%;
+  margin: 0.5em auto;
+}
+main article:first-child .sierras .info {
+  text-align: justify;
+  color: rgb(117, 117, 117);
+}
+main article:nth-child(2) {
+  background-image: url("recursos/foto4.jpg");
+  height: 20vh;
+  background-attachment: fixed;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main article:nth-child(3) {
+  text-align: center;
+}
+main article:nth-child(3) .galeria {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  grid-gap: 1em;
+  align-items: stretch;
+}
+main article:nth-child(3) .galeria img {
+  width: 100%;
+}
+main article:nth-child(3) p {
+  color: rgb(117, 117, 117);
+  border-bottom: 1px solid rgb(117, 117, 117);
+  width: 30%;
+  margin: 2em auto;
+}
+
+footer {
+  text-align: center;
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  height: 20vh;
+}
+footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+}
+footer ul li {
+  padding: 1%;
+}
+footer ul li:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+@media screen and not (min-width: 426px) {
+  header {
+    flex-direction: column;
+  }
+  section article:first-child {
+    flex-direction: column;
+  }
+  section article:first-child .sierras {
+    width: 100%;
+    padding: 2em 0;
+  }
+  section article:last-child .galeria {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
