@@ -39,7 +39,11 @@ function App() {
       fetch(`https://fakestoreapi.com/products/category/${nombre}`)
         .then((datos) => datos.json())
         .then((lectura) => {
-          console.log(lectura)
+          setArticulos(
+            [lectura.title,
+            lectura.price,
+            lectura.image
+            ]);
         })
     });
 
