@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CodePen - eCommerce simple layout with Flexbox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <main class="main-wrapper">
+      <header class="page-header">
+        <h1 class="page-title">Tienda de Prueba Ajax</h1>
+      </header>
+
+      <div class="page-wrapper">
+        <aside class="aside-wrapper">
+          <div class="aside-section">
+            <h3 class="section-title">Filtros</h3>
+            <div class="section-content">
+              <div class="item">
+                <span class="item-content">Categoría</span>
+                <i class="fa fa-close delete-filter js-delete-filter"></i>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <div class="content-wrapper">
+          <h3 class="section-title">Artículos</h3>
+          <div class="grid-container" id="grid-container">
+            <div class="item">
+              <a href="#" class="item-content-wrapper">
+                <div class="item-image-wrapper">
+                  <div class="heart js-heart">
+                    <i
+                      class="fa fa-heart-o js-heart-icon"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                  <img
+                    src="https://unsplash.it/300/300?image=2"
+                    loading="lazy"
+                    alt="Just a macbook"
+                  />
+                </div>
+
+                <div class="item-description-wrapper">
+                  <div class="item-name">Macbook Picant</div>
+                  <div class="item-price">$12.000</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="page-footer">
+        <div class="footer-content-wrapper">
+          <span class="advise"
+            >Gracias a codepen por su html y css. Pueden utilizar flex-wrap para
+            hacer la grilla de macbooks, y min-width para hacer el tamaño
+            flexible. Esto es un footer, además.</span
+          >
+          <h3 class="page-logo">Prueba Ajax IES Oretania (21 de febrero)</h3>
+          <div class="social">
+            <a href="#" class="social-link">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fa fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <!-- partial -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
