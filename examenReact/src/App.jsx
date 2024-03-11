@@ -9,6 +9,8 @@ function App() {
 
   const [categorias, setCategorias] = useState([]);
   const [articulos, setArticulos] = useState([]);
+  const [categoriasUsada, setCategoriasUsada] = useState([]);
+  const [categoria, setCategoria] = useState();
 
   const redes = [
     { nombre: "facebook", claseLink: "social-link", clase: "fa fa-facebook", enlace: "#" },
@@ -17,6 +19,8 @@ function App() {
   ]
 
   const urlCategorias = `https://fakestoreapi.com/products/categories`;
+  const urlArticulos = `https://fakestoreapi.com/products/category/${categoria}`;
+
 
   useEffect(() => {
     fetch(urlCategorias)
@@ -24,7 +28,29 @@ function App() {
       .then((data) => {
         setCategorias(data);
       })
-  });
+  }, [categorias]);
+
+  useEffect(() => {
+    fetch(urlArticulos)
+      .then((response) => response.json())
+      .then((data) => {
+        actualizarArticulos(data)
+      })
+  }, [categoria]);
+
+  const actualizarArticulos = (datos) => {
+    if (!categoriasUsada.includes(categoria)) {
+      setArticulos((prevArticulos) => [...prevArticulos, ...datos]);
+      setCategoriasUsada((prevCategoriasUsada) => [...prevCategoriasUsada, categoria]);
+    } else {
+      const nuevosArticulos = articulos.filter((articulo) => !datos.find((item) => item.id === articulo.id));
+      setArticulos(nuevosArticulos);
+      const nuevasCategoriasUsada = categoriasUsada.filter((cat) => cat !== categoria);
+      setCategoriasUsada(nuevasCategoriasUsada);
+    }
+  };
+  
+  
 
   const cambiarCheck = (e) => {
     if (e.target.className.includes("close")) {
@@ -33,19 +59,7 @@ function App() {
       e.target.className = "fa fa-close delete-filter js-delete-filter"
     }
 
-    let nombre = e.target.previousSibling.textContent;
-
-    useEffect(() => {
-      fetch(`https://fakestoreapi.com/products/category/${nombre}`)
-        .then((datos) => datos.json())
-        .then((lectura) => {
-          setArticulos(
-            [lectura.title,
-            lectura.price,
-            lectura.image
-            ]);
-        })
-    });
+    setCategoria(e.target.previousSibling.textContent);
 
   };
 

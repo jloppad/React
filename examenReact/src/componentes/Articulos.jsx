@@ -4,12 +4,12 @@ export function Articulos(props) {
             <h3 className={props.claseTitulo}>{props.titulo}</h3>
             <div className={props.claseDiv} id={props.idDiv}>
                 {props.articulos.map((articulo) =>
-                    <div class="item">
-                        <a href="#" class="item-content-wrapper">
-                            <div class="item-image-wrapper">
-                                <div class="heart js-heart">
+                    <div key={articulo.title} className="item">
+                        <a href="#" className="item-content-wrapper">
+                            <div className="item-image-wrapper">
+                                <div className="heart js-heart">
                                     <i
-                                        class="fa fa-heart-o js-heart-icon"
+                                        className="fa fa-heart-o js-heart-icon"
                                         aria-hidden="true"
                                     ></i>
                                 </div>
@@ -20,9 +20,9 @@ export function Articulos(props) {
                                 />
                             </div>
 
-                            <div class="item-description-wrapper">
-                                <div class="item-name">{articulo.title}</div>
-                                <div class="item-price">${articulo.price}</div>
+                            <div className="item-description-wrapper">
+                                <div className="item-name">{articulo.title}</div>
+                                <div className="item-price">${articulo.price}</div>
                             </div>
                         </a>
                     </div>
